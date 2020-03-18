@@ -1,0 +1,18 @@
+language: python
+python:
+    - 3.8
+    - 3.7
+    - 3.6
+    - 3.5
+install: pip install -U tox-travis
+script: tox
+deploy:
+    provider: pypi
+    distributions: sdist bdist_wheel
+    user: physbean
+    password:
+        secure: EGINVphXcfw+QhIyPGPIiC+mCStv58ZW7do3H9zQfC2gqWSIMyXXHgxagC4tbLq2F9lb1xHCC18MqWooGb/oGY9a1/7bqjOFZSoaMqEBQNl8e6k8MjX6JiMdDwY+g62bRS7Wbg6MvI4sknhsls3PrkXtxiEhRYWCPRzobwebvui/zBji1NIJuf6MYDF6khRMmxWND5Bh+tzosCSZoe0DHUjHFYqiv8NAO4Kb+H/b/cEvcMrK/2LgXziKO/d2JrBwsXFnW1ya5FAj8pddtntwiDGVb5brQth1BTzUoAOKSsuEcujmueiSH/fz2sFq+nj9cQGkIRwn7kREl0g8lWY4AmryC/lYboj8EQWw8rAt0h7GevZn7G8q+Nw16cT+EgmTLd3h2b8c4ERw/KvDUZ6hdaFVZxJ8y4u6jd6oOmxm8t2AMNhEB7bQ4zv/3WA7zLNuYIqCq5qk6dvcrEu+bgvv56FqfbLvWh9XhbOaboqSF3pz6z/u7gEjjC0b4d6FHZ3W64ufH+UUAX9xl3VtusJrGx9YpCmNFsr6V/eA7birMz3uXVWBRsYFQpsUb98soqrsSI+cBZCGmhqRNQH3wSVcMg0KEfbbTG7bavtZQ5Mf/zBXyhISBdvVJjp7pLIKflArlF/3YWTC+RuavUKhcncynZK9j/FFPDhqP8ylKI6lRYY=
+    on:
+        tags: true
+        repo: physbean/education_math_homework_generator
+        python: 3.8
