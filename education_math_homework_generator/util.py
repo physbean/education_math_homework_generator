@@ -1,5 +1,4 @@
 import os
-import subprocess
 
 
 def remove_temporary_files(filename, extensions=('.tex', '.aux', '.log')):
@@ -22,13 +21,9 @@ def convert_latex_to_pdf(filename, command='pdflatex', options='-interaction non
         write_latex_data_to_file(filename, contents)
 
     full_command_line = '{} {} {}'.format(command, options, filename)
-    proc = subprocess.Popen(full_command_line.split())
-    proc.communicate()
+
     pdf_filename = filename.replace('.tex', '.pdf')
-    return_code = proc.returncode
-    if not return_code == 0:
-        os.unlink(pdf_filename)
-        raise ValueError('Error {} executing command: {}'.format(return_code, full_command_line))
+    os.system(full_command_line)
 
     if view:
         open_pdf(pdf_filename)
