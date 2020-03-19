@@ -36,7 +36,7 @@ requests==2.23.0
 requests-toolbelt==0.9.1
 six==1.14.0
 snowballstemmer==2.0.0
-Sphinx==1.8.5
+Sphinx==2.4.4
 sphinxcontrib-websupport==1.2.0
 toml==0.10.0
 tox==3.14.0
