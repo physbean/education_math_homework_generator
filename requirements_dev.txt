@@ -55,6 +55,5 @@ urllib3==1.25.8
 virtualenv==20.0.11
 wcwidth==0.1.8
 webencodings==0.5.1
-zipp==3.1.0
 pytest==4.6.5
 pytest-runner==5.1
