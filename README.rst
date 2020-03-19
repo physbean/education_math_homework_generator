@@ -9,6 +9,10 @@ education_math_homework_generator
 .. image:: https://img.shields.io/travis/physbean/education_math_homework_generator.svg
         :target: https://travis-ci.com/physbean/education_math_homework_generator
 
+.. image:: https://pyup.io/repos/github/physbean/education_math_homework_generator/shield.svg
+     :target: https://pyup.io/repos/github/physbean/education_math_homework_generator/
+     :alt: Updates
+
 .. image:: https://readthedocs.org/projects/education-math-homework-generator/badge/?version=latest
         :target: https://education-math-homework-generator.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
