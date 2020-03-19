@@ -17,7 +17,9 @@ education_math_homework_generator
         :target: https://education-math-homework-generator.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-
+.. image:: https://pyup.io/repos/github/physbean/education_math_homework_generator/python-3-shield.svg
+     :target: https://pyup.io/repos/github/physbean/education_math_homework_generator/
+     :alt: Python 3
 
 
 Simple, scalable addition and subtraction homework generator using python and latex to create clean pdfs for early childhood 
