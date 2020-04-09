@@ -22,7 +22,9 @@ education_math_homework_generator
      :alt: Python 3
 
 
-Simple, scalable addition and subtraction homework generator using python and latex to create clean pdfs for early childhood 
+A repository of simple, scalable mathematics homework generator using python and latex to create pdfs for early childhood education.
+Customizable tools are also included to be used as an aid, including custimizable number lines and tables. 
+This project was started for self-learning on common distribution tools and utilities, but given the number of families now homeschooling their children because of SARS-CoV-2, this seemed like the most useful side project to put out their for the world. Any feedback or requests are welcome as I continue to learn project structure and all the other tools defined in this template (link below).
 
 
 * Free software: MIT license
@@ -32,10 +34,15 @@ Simple, scalable addition and subtraction homework generator using python and la
 Features
 --------
 
-* TODO
+* Generation of problems for learning addition, subtraction, and multiplication
+* Tools to aid the student such as customizable number lines and tables.
+
 
 Credits
 -------
+
+* SARS-CoV-2 
+
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 

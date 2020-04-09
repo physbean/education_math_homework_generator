@@ -5,6 +5,13 @@ from education_math_homework_generator.util import remove_temporary_files
 
 
 def generate_number_lines(number_of_lines=6, start=0, end=20):
+    """
+    Generates number lines as a tool for practicing mathematics such as addition or subtraction.
+    :param number_of_lines: Specify the number of lines to have on the page
+    :param start: start value for the number line as an integer
+    :param end: end value for the number line as an integer
+    :return: contents of the latex document as a string
+    """
     lines = [r'\documentclass[letterpaper]{article}',
              r'\usepackage{geometry}',
              r'\geometry{landscape,a4paper,total={170mm,257mm},left=10mm,right=10mm,top=30mm}',
@@ -39,6 +46,10 @@ def generate_number_lines(number_of_lines=6, start=0, end=20):
 
 
 def parse_arguments():
+    """
+    Parse user arguments to modify how the document is generated for number lines
+    :return: parsed args passed by the user or defaults defined below
+    """
     parser = argparse.ArgumentParser(description='Generate a numberline to practice Addition/Subtraction')
     parser.add_argument('--start', default=0, type=int, help='integer to start the number line')
     parser.add_argument('--end', default=20, type=int, help='integer to end the number line')
@@ -48,6 +59,10 @@ def parse_arguments():
 
 
 def generate_number_lines_pdf(args):
+    """
+    Takes the parsed arguments, generates appropriate latex string, converts it a pdf, and cleans up any temporary files
+    :param args: parsed arguments that define how to generate the document
+    """
     contents = generate_number_lines(number_of_lines=args.numlines, start=args.start, end=args.end)
     convert_latex_to_pdf(args.filename, contents=contents, view=True)
     remove_temporary_files(args.filename)

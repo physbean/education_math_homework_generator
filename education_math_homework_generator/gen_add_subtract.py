@@ -6,6 +6,13 @@ from education_math_homework_generator.util import remove_temporary_files
 
 
 def generate_problems(number_of_problems=2, maximum_integer=50, problem_type='Addition'):
+    """
+    Generates random example math problems in latex format for practicing Addition, Subtraction, or Multiplication
+    :param number_of_problems: defines how many problems to generate
+    :param maximum_integer: defines the maximum integer possible during the generation of problems
+    :param problem_type: type of problems to generate. options are Addition, Subtraction, or Multiplication
+    :return: contents of the latex document as a string
+    """
     lines = [r'\documentclass{article}',
              r'\usepackage{amsmath}',
              r'\usepackage{amsfonts}',
@@ -46,6 +53,10 @@ def generate_problems(number_of_problems=2, maximum_integer=50, problem_type='Ad
 
 
 def parse_arguments():
+    """
+    Parse user arguments to modify how the document is generated for problem generation
+    :return: parsed args passed by the user or defaults defined below
+    """
     operators = ('Addition',
                  'Subtraction',
                  'Mixed')
@@ -62,6 +73,10 @@ def parse_arguments():
 
 
 def generate_problems_pdf(args):
+    """
+    Takes the parsed arguments, generates appropriate latex, converts it a pdf, and cleans up any temporary files
+    :param args: parsed arguments that define how to generate the document
+    """
     contents = generate_problems(number_of_problems=args.numproblems, maximum_integer=args.maximum_integer, problem_type=args.problemtype)
     convert_latex_to_pdf(args.filename, contents=contents, view=True)
     remove_temporary_files(args.filename)
