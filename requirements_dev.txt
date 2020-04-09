@@ -38,6 +38,6 @@ sphinxcontrib-websupport==1.2.1
 toml==0.10.0
 tqdm==4.44.1
 urllib3==1.25.8
-virtualenv==20.0.15
+virtualenv==20.0.17
 wcwidth==0.1.9
 webencodings==0.5.1
