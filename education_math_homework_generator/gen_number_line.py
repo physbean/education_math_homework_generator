@@ -4,6 +4,10 @@ from education_math_homework_generator.util import convert_latex_to_pdf
 from education_math_homework_generator.util import remove_temporary_files
 
 
+# Credits:
+# example code for numberlines from stackexchange
+# https://tex.stackexchange.com/questions/148252/help-drawing-a-very-simple-number-line-using-tikz
+
 def generate_number_lines(number_of_lines=6, start=0, end=20):
     """
     Generates number lines as a tool for practicing mathematics such as addition or subtraction.

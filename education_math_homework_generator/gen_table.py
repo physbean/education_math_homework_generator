@@ -4,6 +4,10 @@ from education_math_homework_generator.util import convert_latex_to_pdf
 from education_math_homework_generator.util import remove_temporary_files
 
 
+# Credits:
+# latex table example code adopted from stackexchange
+# https://tex.stackexchange.com/questions/210670/addition-and-multiplication-tables
+
 def generate_table(start_int=0, end_int=10, table_type='Addition'):
     """
     Generates reference tables for learning early childhood mathematics

@@ -5,6 +5,10 @@ from education_math_homework_generator.util import convert_latex_to_pdf
 from education_math_homework_generator.util import remove_temporary_files
 
 
+# Credits:
+# latex formatting adopted from stackexchange
+# https://tex.stackexchange.com/questions/11702/how-to-present-a-vertical-multiplication-addition
+
 def generate_problems(number_of_problems=2, maximum_integer=50, problem_type='Addition'):
     """
     Generates random example math problems in latex format for practicing Addition, Subtraction, or Multiplication
