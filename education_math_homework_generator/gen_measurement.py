@@ -28,8 +28,11 @@ def gen_rectangle():
 
 
 def gen_circle():
-    radius = str(random.randint(10, 40) / 10)
-    return r'\draw (0,0) circle (' + radius + r'cm);'
+    radius = random.randint(15, 35) / 10
+    radius_line = r'\draw ' + '({},{}) -- ({},{});'.format('0', '0', '0', str(radius))
+    diameter_line = r'\draw ' + '({},{}) -- ({},{});'.format(str(-1 * radius), '0', str(radius), '0')
+    circle_line = r'\draw (0,0) circle (' + str(radius) + r');'
+    return '\n'.join([circle_line, diameter_line, radius_line])
 
 
 def generate_measurement_problems(shape='lines', number_of_problems=10):
@@ -41,7 +44,7 @@ def generate_measurement_problems(shape='lines', number_of_problems=10):
              r'\usepackage{geometry}',
              r'\geometry{portrait,a4paper,total={170mm,257mm},left=10mm,right=10mm,top=30mm}',
              r'\usepackage{tikz}',
-             r'\begin{document}', r'{\Large Measuring ' + shape + r' practice version 0.1\par}',
+             r'\begin{document}', r'{\Large Measuring ' + shape + r' practice version 0.2\par}',
              r'\vspace*{50px}',
              r'\begin{large}',
              r'\begin{multicols}{2}',
@@ -66,6 +69,7 @@ def generate_measurement_problems(shape='lines', number_of_problems=10):
     lines.append(r'\end{large}')
     lines.append(r'\end{document}')
 
+    print('\n'.join(lines))
     return '\n'.join(lines)
 
 
