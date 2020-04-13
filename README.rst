@@ -26,9 +26,9 @@ A repository of simple, scalable mathematics homework generator using python and
 Customizable tools are also included to be used as an aid, including customizable number lines and tables. 
 This project was started for self-learning on common distribution tools and utilities, but given the number of families now homeschooling their children because of SARS-CoV-2, this seemed like the most useful side project to put out there for the world. Any feedback or requests are welcome as I continue to learn project structure and all the other tools defined in this template (link below).
 
-Recently added gen_measurement code that allows the practice of measurements of common shapes: lines, rectangles, and circles. These are intended to be used with a ruler of some sort. This generator will probably be extended to younger age ranges by generating pairs to work on comparisons (larger/smaller) and extended to older age ranges by inclusion of area computation and/or 3d shapes. 
+Recently added gen_measurement code that allows the practice of measurements of common shapes: lines, rectangles, and circles. These are intended to be used with a ruler of some sort (or you can use the blocks variant for younger learners). This generator will probably be extended to younger age ranges by generating pairs to work on comparisons (larger/smaller) and extended to older age ranges by inclusion of area computation and/or 3d shapes. 
 I am working on adding problem generators that include working with time, money, and ratios currently (reading up on the standards of a few states currently for ideas/guidance).
-I would also like to add generating N pages of a problem type as an user option as well as more mixed mode types to work on attention and identification of the operators/shapes/etc as a progression option. 
+I would also like to add generating N pages of a problem type as an user optioni (complete for gen_add_subtract) as well as more mixed mode types to work on attention and identification of the operators/shapes/etc as a progression option. 
 
 Proper credits to latex examples used in this repo have been added below as well as at the top of each respective source file. Apologies for not doing this from the start.
 
