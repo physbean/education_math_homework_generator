@@ -35,6 +35,15 @@ def gen_circle():
     return '\n'.join([circle_line, diameter_line, radius_line])
 
 
+def gen_block_rectangle():
+    length = random.randint(1, 8)
+    width = random.randint(1, 8)
+    if width > length:
+        length, width = width, length
+    grid = r'\draw[step=1cm,gray,very thin] ' + '(0,0) grid ({},{});'.format(length, width)
+    return grid
+
+
 def generate_measurement_problems(shape='lines', number_of_problems=10):
     lines = [r'\documentclass[letterpaper]{article}',
              r'\usepackage{amsmath}',
@@ -44,7 +53,7 @@ def generate_measurement_problems(shape='lines', number_of_problems=10):
              r'\usepackage{geometry}',
              r'\geometry{portrait,a4paper,total={170mm,257mm},left=10mm,right=10mm,top=30mm}',
              r'\usepackage{tikz}',
-             r'\begin{document}', r'{\Large Measuring ' + shape + r' practice version 0.2\par}',
+             r'\begin{document}', r'{\Large Measuring ' + shape + r' practice version 0.3\par}',
              r'\vspace*{50px}',
              r'\begin{large}',
              r'\begin{multicols}{2}',
@@ -57,6 +66,8 @@ def generate_measurement_problems(shape='lines', number_of_problems=10):
             lines.append(gen_line())
         if shape == 'rectangles':
             lines.append(gen_rectangle())
+        if shape == 'rectangles-blocks':
+            lines.append(gen_block_rectangle())
         if shape == 'circles':
             lines.append(gen_circle())
         if shape == 'mixed':
@@ -78,14 +89,18 @@ def parse_arguments():
     Parse user arguments to modify how the document is generated for tables
     :return: parsed args passed by the user or defaults defined below
     """
-    shapes = ('lines', 'rectangles', 'circles', 'mixed')
+    shapes = ('lines', 'rectangles', 'circles', 'mixed', 'rectangles-blocks')
 
     parser = argparse.ArgumentParser(description='Generate shapes to practice measuring')
     parser.add_argument('--number_of_problems', default=10, type=int, help='Number of problems to generate')
     parser.add_argument('--shape', default='mixed', help='Type of shape to measure')
     parser.add_argument('--filename', default='measurements_01.tex', help='filename to generate')
+    parser.add_argument('--use_blocks', default=False, help='Use generic blocks so no ruler is required - only rectangles')
     args = parser.parse_args()
 
+    if args.use_blocks:
+        assert args.shape == 'rectangles', 'Only rectangles are available in block mode'
+        args.shape = 'rectangles-blocks'
     assert args.shape in shapes, '{} not a valid table_type, only {}'.format(args.table_type, ', '.join([x for x in shapes]))
     return args
 
@@ -93,6 +108,8 @@ def parse_arguments():
 def generate_measurement_problems_pdf(args):
     """
     Takes the parsed arguments, generates appropriate latex, converts it a pdf, and cleans up any temporary files
+    Blocks option allows the generation of simple blocks to generate rectangles to be able to measure without a ruler.
+    This option will also extend to multiplication and area concepts easily going forward.
     :param args: parsed arguments that define how to generate the document
     """
     contents = generate_measurement_problems(shape=args.shape, number_of_problems=args.number_of_problems)
