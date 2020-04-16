@@ -27,7 +27,7 @@ def generate_number_lines(number_of_lines=6, start=0, end=20):
              r'']
 
     numbers = ','.join([str(x) for x in range(start, end + 1)])
-    for i in range(number_of_lines):
+    for _ in range(number_of_lines):
         lines.append(r'')
         lines.append(r'{\Large $-$}')
         lines.append(r'\begin{tikzpicture}')
