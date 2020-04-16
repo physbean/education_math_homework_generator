@@ -3,8 +3,8 @@
 """Tests for 'education_math_homework_generator.gen_add_subtract' package."""
 
 from education_math_homework_generator.gen_add_subtract import generate_problems
-from education_math_homework_generator.util import convert_latex_to_pdf
-from education_math_homework_generator.util import remove_temporary_files
+from education_math_homework_generator.pdflatex_functions import convert_latex_to_pdf
+from education_math_homework_generator.pdflatex_functions import remove_temporary_files
 
 
 def test_generate_problems_addition():

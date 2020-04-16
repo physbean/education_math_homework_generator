@@ -2,9 +2,9 @@
 
 """Tests for 'education_math_homework_generator.util' package."""
 
-from education_math_homework_generator.util import convert_latex_to_pdf
-from education_math_homework_generator.util import remove_temporary_files
-from education_math_homework_generator.util import write_latex_data_to_file
+from education_math_homework_generator.pdflatex_functions import convert_latex_to_pdf
+from education_math_homework_generator.pdflatex_functions import remove_temporary_files
+from education_math_homework_generator.pdflatex_functions import write_latex_data_to_file
 
 
 def test_write_latex_data_to_file():
