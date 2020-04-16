@@ -40,8 +40,9 @@ def gen_block_rectangle():
     width = random.randint(1, 8)
     if width > length:
         length, width = width, length
-    grid = r'\draw[step=1cm,gray,very thin] ' + '(0,0) grid ({},{});'.format(length, width)
-    return grid
+    return r'\draw[step=1cm,gray,very thin] ' + '(0,0) grid ({},{});'.format(
+        length, width
+    )
 
 
 def generate_measurement_problems(shape='lines', number_of_problems=10):
@@ -59,7 +60,7 @@ def generate_measurement_problems(shape='lines', number_of_problems=10):
              r'\begin{multicols}{2}',
              r'\begin{enumerate}']
 
-    for i in range(number_of_problems):
+    for _ in range(number_of_problems):
         lines.append(r'\item')
         lines.append(r'\begin{tikzpicture}')
         if shape == 'lines':

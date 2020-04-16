@@ -35,15 +35,15 @@ def generate_problems(number_of_problems=2, maximum_integer=50, problem_type='Ad
         lines.append(r'\begin{large}')
         lines.append(r'\begin{enumerate}')
 
-        for i in range(number_of_problems):
+        for _ in range(number_of_problems):
             lines.append(r'\item')
             lines.append(r'\begin{tabular}{lr}')
             int_1 = random.randint(1, maximum_integer)
             int_2 = random.randint(1, maximum_integer)
             if int_1 < int_2:
                 int_2, int_1 = int_1, int_2
-            int_1_string = ' '.join(x for x in str(int_1))
-            int_2_string = ' '.join(x for x in str(int_2))
+            int_1_string = ' '.join(iter(str(int_1)))
+            int_2_string = ' '.join(iter(str(int_2)))
             lines.append(r' & ' + int_1_string + r'\\')
             lines.append(operator[problem_type] + r'& ' + int_2_string + r'\\')
             lines.append(r'\hline')
