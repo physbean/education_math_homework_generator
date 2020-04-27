@@ -21,7 +21,6 @@ education_math_homework_generator
      :target: https://pyup.io/repos/github/physbean/education_math_homework_generator/
      :alt: Python 3
 
-
 A repository of simple, scalable mathematics homework generator using python and latex to create pdfs for early childhood education.
 Customizable tools are also included to be used as an aid, including customizable number lines and tables. 
 This project was started for self-learning on common distribution tools and utilities, but given the number of families now homeschooling their children because of SARS-CoV-2, this seemed like the most useful side project to put out there for the world. Any feedback or requests are welcome as I continue to learn project structure and all the other tools defined in this template (link below).
@@ -35,6 +34,7 @@ Proper credits to latex examples used in this repo have been added below as well
 * Free software: MIT license
 * Documentation: https://education-math-homework-generator.readthedocs.io.
 
+[ ~ Dependencies scanned by PyUp.io ~ ]
 
 Features
 --------
