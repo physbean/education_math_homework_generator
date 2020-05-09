@@ -57,6 +57,7 @@ def generate_measurement_problems(shape='lines', number_of_problems=10):
              r'\begin{document}', r'{\Large Measuring ' + shape + r' practice version 0.3\par}',
              r'\vspace*{50px}',
              r'\begin{large}',
+             r'\pagenumbering{gobble}',
              r'\begin{multicols}{2}',
              r'\begin{enumerate}']
 

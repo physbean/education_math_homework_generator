@@ -23,6 +23,7 @@ def generate_number_lines(number_of_lines=6, start=0, end=20):
              r'\usepackage{amsmath}',
              r'\usetikzlibrary{arrows}',
              r'\begin{document}',
+             r'\pagenumbering{gobble}',
              r'\begin{LARGE}',
              r'']
 

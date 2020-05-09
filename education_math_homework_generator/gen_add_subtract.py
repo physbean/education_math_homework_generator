@@ -17,19 +17,20 @@ def generate_problems(number_of_problems=2, maximum_integer=50, problem_type='Ad
     :param problem_type: type of problems to generate. options are Addition, Subtraction, or Multiplication
     :return: contents of the latex document as a string
     """
-    operator = {'Addition': '+',
-                'Subtraction': '-',
-                'Multiplication': '*'}
+    operator = {'Addition': r'+',
+                'Subtraction': r'-',
+                'Multiplication': r'\times'}
 
     lines = [r'\documentclass{article}',
              r'\usepackage{amsmath}',
              r'\usepackage{amsfonts}',
              r'\usepackage{amssymb}',
+             r'\pagenumbering{gobble}',
              r'\usepackage{multicol}',
              r'\begin{document}']
 
     for index, page in enumerate(range(number_of_pages)):
-        lines.append(r'{\Large ' + problem_type + r' practice version 0.1\par}')
+        lines.append(r'{\Large ' + ' {} '.format(problem_type) + r' practice version 0.1\par}')
         lines.append(r'{\large using max integer = ' + str(maximum_integer) + r'\par}')
         lines.append(r'\begin{multicols}{2}')
         lines.append(r'\begin{large}')
@@ -45,7 +46,12 @@ def generate_problems(number_of_problems=2, maximum_integer=50, problem_type='Ad
             int_1_string = ' '.join(iter(str(int_1)))
             int_2_string = ' '.join(iter(str(int_2)))
             lines.append(r' & ' + int_1_string + r'\\')
-            lines.append(operator[problem_type] + r'& ' + int_2_string + r'\\')
+            if problem_type == 'Mixed':
+                lines.append(operator[random.choice(['Addition', 'Subtraction', 'Multiplication'])] + r'& ' + int_2_string + r'\\')
+            elif problem_type == 'Mixed Addition Subtraction':
+                lines.append(operator[random.choice(['Addition', 'Subtraction'])] + r'& ' + int_2_string + r'\\')
+            else:
+                lines.append(operator[problem_type] + r'& ' + int_2_string + r'\\')
             lines.append(r'\hline')
             lines.append(r' &    \\')
             lines.append(r'\end{tabular}')
@@ -71,12 +77,14 @@ def parse_arguments():
     """
     operators = ('Addition',
                  'Subtraction',
+                 'Multiplication',
+                 'Mixed Addition Subtraction',
                  'Mixed')
 
     parser = argparse.ArgumentParser(description='Generate a numberline to practice Addition/Subtraction')
     parser.add_argument('--maximum_integer', default=10, type=int, help='maximum integer to use in generation')
     parser.add_argument('--numproblems', default=10, type=int, help='number of problems to generate')
-    parser.add_argument('--problemtype', default='Addition', help='number of lines to generate')
+    parser.add_argument('--problemtype', default='Mixed Addition Subtraction', help='number of lines to generate')
     parser.add_argument('--filename', default='math_homework_01.tex', help='filename to generate')
     parser.add_argument('--numpages', default=10, help='Generate multiple pages for entire class or for extra practice')
     args = parser.parse_args()

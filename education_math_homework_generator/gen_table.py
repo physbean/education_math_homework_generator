@@ -31,6 +31,7 @@ def generate_table(start_int=0, end_int=10, table_type='Addition'):
              r'\vspace*{25px}',
              r'\renewcommand\arraystretch{1.3}',
              r'\setlength\doublerulesep{0pt}',
+             r'\pagenumbering{gobble}',
              r'\begin{tabular}{r||*{' + str(end_int - start_int + 1) + '}{3|}}']
 
     operator = {'Addition': r'$+$',
