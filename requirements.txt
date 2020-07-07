@@ -8,7 +8,7 @@ bleach==3.1.5
 bump2version==1.0.0
 certifi==2020.4.5.1
 chardet==3.0.4
-coverage==5.1
+coverage==5.2
 docutils==0.16
 entrypoints==0.3
 filelock==3.0.12
