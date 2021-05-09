@@ -1,5 +1,5 @@
 tox==3.22.0
 pytest==6.1.0
 alabaster==0.7.12
-flake8==3.7.9
+flake8==3.9.2
 sphinxcontrib-websupport==1.2.4
